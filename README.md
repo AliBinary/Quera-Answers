@@ -1,4 +1,4 @@
-# پاسخ‌های من در سایت کوئرا <a href="https://quera.org" target="_blank" rel="noopener noreferrer"><object data="Quera_logo.svg" width="200" height="40"> </object></a>
+# پاسخ‌های من در سایت کوئرا <a href="https://quera.org" target="_blank" rel="noopener noreferrer"><img src="Quera_logo.svg" alt="Quera_logo" width="200" height="50" /></a>
 
 [![code formatter Badge](https://img.shields.io/badge/Code%20Style-autopep8-blue?logo=python&logoColor=white)](https://github.com/microsoft/vscode-autopep8)
 [![linter Badge](https://img.shields.io/badge/Linter-flake8-yellow?logo=python&logoColor=white)](https://github.com/microsoft/vscode-flake8)
