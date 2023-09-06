@@ -1,4 +1,4 @@
-# پاسخ‌های من در سایت کوئرا [![Quera Icon](https://user-images.githubusercontent.com/49264993/137637114-e0687e95-08eb-4181-98b0-56fe515f6bc7.png)](https://quera.org)
+# پاسخ‌های من در سایت کوئرا <a href="https://quera.org" target="_blank" rel="noopener noreferrer"><object data="Quera_logo.svg" width="200" height="40"> </object></a>
 
 [![code formatter Badge](https://img.shields.io/badge/Code%20Style-autopep8-blue?logo=python&logoColor=white)](https://github.com/microsoft/vscode-autopep8)
 [![linter Badge](https://img.shields.io/badge/Linter-flake8-yellow?logo=python&logoColor=white)](https://github.com/microsoft/vscode-flake8)
