@@ -4,6 +4,7 @@
     GitHub: https://github.com/AliBinary
     created: 27.08.2023 08:59:54
 '''
+
 from math import sqrt
 
 n = input()
