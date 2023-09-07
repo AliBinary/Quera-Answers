@@ -1,10 +1,3 @@
-'''
-    author:  AliTitan051
-    Email: AliGhanbariCs@gmail.com
-    GitHub: https://github.com/AliBinary
-    created: 07.09.2023 19:20:52
-'''
-
 n = int(input())
 s = input()
 k = int(input())
