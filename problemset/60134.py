@@ -11,9 +11,8 @@ def fruits(output):
     for fruit in output:
         if (fruit['shape'] == 'sphere' and
            abs(fruit['mass'] - 450) <= 150 and
-           abs(fruit['volume'] - 300) <= 200):
+           abs(f uit['volume'] - 300) <= 200):
             temp = fruit['name']
-            print(temp)
             if ans.get(temp) is None:
                 ans[temp] = 1
             else:
