@@ -14,7 +14,7 @@ def fruits(output):
            abs(fruit['volume'] - 300) <= 200):
             temp = fruit['name']
             print(temp)
-            if (ans.get(temp) == None):
+            if ans.get(temp) is None:
                 ans[temp] = 1
             else:
                 ans[temp] += 1
