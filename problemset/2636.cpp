@@ -1,3 +1,10 @@
+/*
+    author:  Ali
+    Email: AliGhanbariCs@gmail.com
+    GitHub: https://github.com/AliBinary
+    created: 08.02.2024 12:04:39
+*/
+
 #include <iostream>
 using namespace std;
 

@@ -1,8 +1,8 @@
 '''
-    author:  AliTitan051
+    author:  Ali
     Email: AliGhanbariCs@gmail.com
     GitHub: https://github.com/AliBinary
-    created: 27.08.2023 09:09:11
+    created: 08.02.2024 12:11:06
 '''
 
 a = int(input())
