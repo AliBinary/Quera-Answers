@@ -2,7 +2,7 @@
     author:  Ali
     Email: AliGhanbariCs@gmail.com
     GitHub: https://github.com/AliBinary
-    created: 17.05.2024 16:03:34
+    created: 16.07.2024 10:03:57
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -15,7 +15,7 @@ typedef long double ld;
 typedef string str;
 
 // pairs
-typedef pair<ld, ld> pdd;
+typedef pair<double, double> pdd;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
 typedef pair<pii, int> ppi;
@@ -41,14 +41,18 @@ tcT > using V = vector<T>;
 #define eb emplace_back
 #define ft front()
 #define bk back()
-#define cpresent(container, element) (find(all(container), element) != container.end())
-#define present(container, element) (container.find(element) != container.end())
+#define cpresent(container, element) (find(all(container), element) != container.end()) // vector
 
 // sets
+#define present(container, element) (container.find(element) != container.end()) // set/map
 #define lb lower_bound
 #define ub upper_bound
 tcT > int lwb(V<T> &a, const T &b) { return int(lb(all(a), b) - bg(a)); }
 tcT > int upb(V<T> &a, const T &b) { return int(ub(all(a), b) - bg(a)); }
+
+// maps
+typedef map<int, int> mii;
+typedef map<str, int> msi;
 
 // loops
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
@@ -86,10 +90,10 @@ constexpr int msk2(int x) { return p2(x) - 1; }
 ll cdiv(ll a, ll b) { return a / b + ((a ^ b) > 0 && a % b); }                     // divide a by b rounded up
 ll fdiv(ll a, ll b) { return a / b - ((a ^ b) < 0 && a % b); }                     // divide a by b rounded down
 tcT > bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0; }                // set a = min(a,b)
-tcT > bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0; }                // set a = max(a,b)
+tcT > bool ckmax(T &a, const T &b) { return b > a ? a = b, 1 : 0; }                // set a = max(a,b)
 tcT > void remDup(vector<T> &v) { sort(all(v)), v.erase(unique(all(v)), end(v)); } // sort and remove duplicates
-bool cmp(pii &a, pii &b) { return (a.second < b.second); }
 
+bool cmp(pii &a, pii &b) { return (a.second < b.second); }
 const int inf = std::numeric_limits<int>::max();
 const ll INF = std::numeric_limits<ll>::max();
 const ld epsilon = 1. / INF;
@@ -114,16 +118,8 @@ void solve()
     int a, b, h;
     cin >> a >> b >> h;
 
-    int ans = 0;
-    while (h > 0)
-    {
-        h -= a;
-        ans++;
-        if (h <= 0)
-            break;
-        h += b;
-    }
-    cout << ans << endl;
+    int ans = ceil((h - a) * 1. / (a - b)) + 1;
+    kill(ans);
 }
 
 /* stuff you should look for
