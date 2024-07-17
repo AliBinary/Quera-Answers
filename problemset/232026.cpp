@@ -2,7 +2,7 @@
     author:  Ali
     Email: AliGhanbariCs@gmail.com
     GitHub: https://github.com/AliBinary
-    created: 26.04.2024 16:09:37
+    created: 17.07.2024 10:02:06
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -15,7 +15,7 @@ typedef long double ld;
 typedef string str;
 
 // pairs
-typedef pair<ld, ld> pdd;
+typedef pair<double, double> pdd;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
 typedef pair<pii, int> ppi;
@@ -41,24 +41,28 @@ tcT > using V = vector<T>;
 #define eb emplace_back
 #define ft front()
 #define bk back()
-#define cpresent(container, element) (find(all(container), element) != container.end())
-// sets
-#define present(container, element) (container.find(element) != container.end())
+#define cpresent(container, element) (find(all(container), element) != container.end()) // vector
 
+// sets
+#define present(container, element) (container.find(element) != container.end()) // set/map
 #define lb lower_bound
 #define ub upper_bound
 tcT > int lwb(V<T> &a, const T &b) { return int(lb(all(a), b) - bg(a)); }
 tcT > int upb(V<T> &a, const T &b) { return int(ub(all(a), b) - bg(a)); }
 
+// maps
+typedef map<int, int> mii;
+typedef map<str, int> msi;
+
 // loops
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
 #define F0R(i, b) FOR(i, 0, b)
-#define ROF(i, a, b) for (int i = (b)-1; i >= (a); --i)
+#define ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define R0F(i, b) ROF(i, 0, b)
 #define rep(n) FOR(_, 0, n)
 #define each(x, a) for (auto &x : a)
-#define tr(container, it) \
-    for (typeof(container.begin()) it = container.begin(); it != container.end(); it++)
+#define tr(it, container) \
+    for (typeof(container.begin()) it = container.begin(); it != container.end(); ++it)
 
 // debug
 #define debug(x) cerr << #x << '=' << (x) << endl;
@@ -86,14 +90,16 @@ constexpr int msk2(int x) { return p2(x) - 1; }
 ll cdiv(ll a, ll b) { return a / b + ((a ^ b) > 0 && a % b); }                     // divide a by b rounded up
 ll fdiv(ll a, ll b) { return a / b - ((a ^ b) < 0 && a % b); }                     // divide a by b rounded down
 tcT > bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0; }                // set a = min(a,b)
-tcT > bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0; }                // set a = max(a,b)
+tcT > bool ckmax(T &a, const T &b) { return b > a ? a = b, 1 : 0; }                // set a = max(a,b)
 tcT > void remDup(vector<T> &v) { sort(all(v)), v.erase(unique(all(v)), end(v)); } // sort and remove duplicates
-tcT > bool cmp(const T &a, const T &b) { return (a.second < b.second); }
 
+bool cmp(pii &a, pii &b) { return (a.second < b.second); }
 const int inf = std::numeric_limits<int>::max();
 const ll INF = std::numeric_limits<ll>::max();
+const ld epsilon = 1. / INF;
+void solve();
 
-V<int> nums;
+V<int> a = {2, 1, 3, 2, 2, 1, 3, 2};
 int main()
 {
     fast_io;
@@ -102,21 +108,20 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        nums.pb(n);
-    }
-
-    int f[] = {2, 1, 3, 2, 2, 1, 3, 2};
-    each(x, nums)
-    {
-        int y = f[(x - 1) % 8];
-        if (x != 1 && x % 2 != 0)
-            y *= -1;
-        cout << y << endl;
+        solve();
     }
 
     return 0;
+}
+
+void solve()
+{
+    int n;
+    cin >> n;
+    int ans = a[(n - 1) % sz(a)];
+    if (n != 1 && n % 2)
+        ans *= -1;
+    kill(ans);
 }
 
 /* stuff you should look for
