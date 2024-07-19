@@ -2,7 +2,7 @@
     author:  Ali
     Email: AliGhanbariCs@gmail.com
     GitHub: https://github.com/AliBinary
-    created: 19.07.2024 22:20:42
+    created: 19.07.2024 22:28:01
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -115,12 +115,65 @@ int main()
 
 void solve()
 {
-    int n, m;
-    cin >> n >> m;
-    if (n == 1 || m == 1)
-        kill(n * m);
-    int ans = (2 * n) + (m - 2) * 2;
-    cout << ans;
+    int n;
+    cin >> n;
+    V<short> a(n, -1);
+    V<short> b(n, -1);
+    V<str> input(n);
+    each(x, input)
+    {
+        cin >> x;
+    }
+    FOR(i, 0, n)
+    {
+        str s = input[i];
+        FOR(j, 0, n)
+        {
+            char ch = s[j];
+            if (ch == '<')
+            {
+                if (a[i] == 1 || b[j] == 0)
+                    kill("invalid");
+                a[i] = 0;
+                b[j] = 1;
+            }
+            else if (ch == '>')
+            {
+                if (a[i] == 0 || b[j] == 1)
+                    kill("invalid");
+                a[i] = 1;
+                b[j] = 0;
+            }
+        }
+    }
+    FOR(i, 0, n)
+    {
+        str s = input[i];
+        FOR(j, 0, n)
+        {
+            char ch = s[j];
+            if (ch == '=')
+            {
+                if (a[i] == -1 && b[j] == -1)
+                    kill("not unique");
+                if (a[i] == -1 && b[j] != -1)
+                    a[i] = b[j];
+                else if (a[i] != -1 && b[j] == -1)
+                    b[j] = a[i];
+                else if (a[i] != b[j])
+                    kill("invalid");
+            }
+        }
+    }
+    each(x, a)
+    {
+        cout << x;
+    }
+    cout << endl;
+    each(x, b)
+    {
+        cout << x;
+    }
 }
 
 /* stuff you should look for
