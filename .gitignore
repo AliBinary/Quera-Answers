@@ -1,0 +1,38 @@
+# Compiled object files
+*.o
+*.obj
+*.exe
+
+# C++ binary outputs
+*.out
+
+# Python-related files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# VSCode configuration and settings
+.vscode/
+*.code-workspace
+
+# Backup files
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+.rcph/
+
+# Git-specific files
+*.lock
+
+input.txt
+output.txt
